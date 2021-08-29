@@ -1,0 +1,49 @@
+function add(){
+console.log("Adding a Card ");
+}
+undefined
+window.add();
+VM137:2 Adding a Card 
+undefined
+function add(){
+console.log("Adding a User");
+}
+undefined
+add();
+VM233:2 Adding a User
+undefined
+add = 1000;
+1000
+add();
+VM309:1 Uncaught TypeError: add is not a function
+    at <anonymous>:1:1
+(anonymous) @ VM309:1
+function customer(){
+var add = function(){
+console.log("I am a Add Fn ");
+}
+add();
+}
+undefined
+customer();
+VM470:3 I am a Add Fn 
+undefined
+function order(){
+var add = function(){
+console.log("I am a order Fn ");
+}
+}
+undefined
+function order(){
+var add = function(){
+console.log("I am a order Fn ");
+}
+add();
+}
+undefined
+customer();
+VM470:3 I am a Add Fn 
+undefined
+order();
+VM603:3 I am a order Fn 
+undefined
