@@ -1,0 +1,243 @@
+function add(){
+console.log("I am a Add Function ");
+}
+undefined
+typeof add;
+"function"
+var x = 100;
+undefined
+typeof x;
+"number"
+add();
+VM215:2 I am a Add Function 
+undefined
+function add(x,y){
+return x + y;
+}
+undefined
+add(10,20);
+30
+add("10",20);
+"1020"
+add("10","Hello");
+"10Hello"
+add(10, true)
+11
+add(1,2,3,4);
+3
+add("hello","hi",10,20);
+"hellohi"
+function add(){
+console.log("Arguments are ",arguments);
+}
+undefined
+function add(){
+console.log("Arguments are ",arguments.length);
+}
+undefined
+add();
+VM1324:2 Arguments are  0
+undefined
+add(10,20);
+VM1324:2 Arguments are  2
+undefined
+add(10,20,30);
+VM1324:2 Arguments are  3
+undefined
+add(10,20,30,"40");
+VM1324:2 Arguments are  4
+undefined
+add;
+ƒ add(){
+console.log("Arguments are ",arguments.length);
+}
+typeof add;
+"function"
+console.dir(add);
+VM1471:1 ƒ add()arguments: nullcaller: nulllength: 0name: "add"prototype: {constructor: ƒ}[[FunctionLocation]]: VM1324:1[[Prototype]]: ƒ ()[[Scopes]]: Scopes[1]
+undefined
+add.length
+0
+add.name;
+"add"
+add.arguments
+null
+function add(){
+var sum = 0;
+//console.log("Arguments are ",arguments.length);
+for(var i = 0; i<arguments.length; i++){
+sum+=arguments[i];
+}
+return sum;
+}
+undefined
+add();
+0
+add(1,2);
+3
+add(1,2,3,4,5);
+15
+var arr = [10,20,30,40,50];
+undefined
+typeof arr;
+"object"
+arr instanceof Array;
+true
+typeof Array;
+"function"
+function add(){
+var sum = 0;
+//console.log("Arguments are ",arguments.length);
+console.log(arguments instanceof Array);
+for(var i = 0; i<arguments.length; i++){
+sum+=arguments[i];
+}
+return sum;
+}
+undefined
+add(1,2,3,4,5);
+VM2065:4 false
+15
+add(1,2,3,4,"5");
+VM2065:4 false
+"105"
+function add(){
+var sum = 0;
+//console.log("Arguments are ",arguments.length);
+console.log(arguments instanceof Array);
+for(var i = 0; i<arguments.length; i++){
+sum+=parseInt(arguments[i]);
+}
+return sum;
+}
+undefined
+add(1,2,3,4,"5");
+VM2152:4 false
+15
+add(1,2,3,4,"five");
+VM2152:4 false
+NaN
+parseInt("100");
+100
+parseInt("ten");
+NaN
+NaN + 434
+NaN
+isNaN(parseInt("ten"))
+true
+isNaN(parseInt("ten"))?0:parseInt("10")
+0
+function add(){
+var sum = 0;
+//console.log("Arguments are ",arguments.length);
+console.log(arguments instanceof Array);
+for(var i = 0; i<arguments.length; i++){
+sum+=isNaN(parseInt(arguments[i]))?0:parseInt(arguments[i]);
+}
+return sum;
+}
+undefined
+add(10,"20","ten");
+VM2424:4 false
+30
+function one(){
+return 1;
+}
+undefined
+function two(){
+return "2";
+}
+undefined
+function three(){
+return "Three";
+}
+undefined
+add(1,"2","three",one,two, three);
+VM2424:4 false
+3
+function add(){
+var sum = 0;
+for(var i = 0; i<arguments.length; i++){
+if(typeof arguments[i]==="function"){
+arguments[i] = arguments[i]();
+}
+sum+=isNaN(parseInt(arguments[i]))?0:parseInt(arguments[i]);
+}
+return sum;
+}
+undefined
+add(1,"2","three",one,two, three);
+6
+var ar= [10,20];
+undefined
+function add(){
+var sum = 0;
+for(var i = 0; i<arguments.length; i++){
+if(arguments[i] instanceof Array){
+for(var j= 0; j<arguments[i].length; j++){
+    sum+=arguments[i][j];
+}
+}
+else{
+if(typeof arguments[i]==="function"){
+arguments[i] = arguments[i]();
+}
+sum+=isNaN(parseInt(arguments[i]))?0:parseInt(arguments[i]);
+}
+}
+return sum;
+}
+undefined
+add(1,"2",one,[1,2]);
+7
+add(1,"2",one,["1",2]);
+"412"
+function add(){
+var sum = 0;
+for(var i = 0; i<arguments.length; i++){
+if(arguments[i] instanceof Array){
+for(var j= 0; j<arguments[i].length; j++){
+    if(typeof arguments[i][j]==="function"){
+arguments[i][j] = arguments[i][j]();
+}
+sum+=isNaN(parseInt(arguments[i][j]))?0:parseInt(arguments[i][j]);
+}
+}
+}
+else{
+if(typeof arguments[i]==="function"){
+arguments[i] = arguments[i]();
+}
+sum+=isNaN(parseInt(arguments[i]))?0:parseInt(arguments[i]);
+}
+}
+return sum;
+}
+VM3429:13 Uncaught SyntaxError: Unexpected token 'else'
+function add(){
+var sum = 0;
+for(var i = 0; i<arguments.length; i++){
+if(arguments[i] instanceof Array){
+for(var j= 0; j<arguments[i].length; j++){
+    if(typeof arguments[i][j]==="function"){
+arguments[i][j] = arguments[i][j]();
+}
+sum+=isNaN(parseInt(arguments[i][j]))?0:parseInt(arguments[i][j]);
+} //jth loop ends
+} //if ends
+else{
+if(typeof arguments[i]==="function"){
+arguments[i] = arguments[i]();
+}
+sum+=isNaN(parseInt(arguments[i]))?0:parseInt(arguments[i]);
+}
+} //ith loop ends
+return sum;
+}
+undefined
+add(1,"2",one,["1",2]);
+7
+add(1,"2",one,["1",2, two]);
+9
+10 + null
+10

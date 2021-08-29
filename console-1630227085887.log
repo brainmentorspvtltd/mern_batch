@@ -1,0 +1,317 @@
+function show(...args){
+console.log(args);
+}
+undefined
+show();
+VM140:2 []
+undefined
+show(10,20);
+VM140:2 (2) [10, 20]
+undefined
+var arr = [10,20,30,40,50];
+undefined
+var arr2 = arr; // Copy Reference
+undefined
+arr2=== arr;
+true
+arr2[0] = 1000;
+1000
+arr;
+(5) [1000, 20, 30, 40, 50]
+arr2;
+(5) [1000, 20, 30, 40, 50]
+var arr3 = [...arr]; // Spread - Copy of Element
+undefined
+arr3===arr;
+false
+arr;
+(5) [1000, 20, 30, 40, 50]
+arr3;
+(5) [1000, 20, 30, 40, 50]
+arr3[0]=1111;
+1111
+arr3;
+(5) [1111, 20, 30, 40, 50]
+arr;
+(5) [1000, 20, 30, 40, 50]
+var obj = {id:1001, name:'Amit'};
+undefined
+typeof obj;
+"object"
+var arr = [10,20,30,40,50];
+undefined
+typeof arr;
+"object"
+arr instanceof Array;
+true
+typeof Array;
+"function"
+obj instanceof Array;
+false
+obj instanceof Object;
+true
+typeof Object;
+"function"
+arr instanceof Array;
+true
+arr instanceof Object;
+true
+var obj = {id:1001, name:'Amit'};
+undefined
+var obj2 = {id:1002, salary:9999};
+undefined
+var obj3 = {...obj,...obj2};
+undefined
+obj3;
+{id: 1002, name: "Amit", salary: 9999}
+var obj4 = {obj, obj2};
+undefined
+obj3.name;
+"Amit"
+obj4.obj.name;
+"Amit"
+function add(x,y){
+return x + y;
+}
+undefined
+add(10,20);
+30
+add(10);
+NaN
+function add(x=0,y=0){
+return x + y;
+}
+undefined
+add();
+0
+add(10);
+10
+add(10,20);
+30
+add()
+0
+var a1;
+undefined
+typeof a1;
+"undefined"
+if(a1==='undefined'){
+console.log("this is undefined");
+}
+undefined
+a1;
+undefined
+if(a1===undefined){
+console.log("this is undefined");
+}
+VM1819:2 this is undefined
+undefined
+if(a1){
+console.log("Value Truthy");
+}
+else{
+    console.log("Falsy Value");
+}
+VM1927:5 Falsy Value
+undefined
+a1;
+undefined
+if(a1){
+console.log("Value Truthy");
+}
+else{
+    console.log("Falsy Value");
+}
+VM1945:5 Falsy Value
+undefined
+a1=null;
+null
+if(a1){
+console.log("Value Truthy");
+}
+else{
+    console.log("Falsy Value");
+}
+VM1972:5 Falsy Value
+undefined
+a1="";
+""
+if(a1){
+console.log("Value Truthy");
+}
+else{
+    console.log("Falsy Value");
+}
+VM1996:5 Falsy Value
+undefined
+a1=0;
+0
+if(a1){
+console.log("Value Truthy");
+}
+else{
+    console.log("Falsy Value");
+}
+VM2018:5 Falsy Value
+undefined
+a1 =NaN;
+NaN
+if(a1){
+console.log("Value Truthy");
+}
+else{
+    console.log("Falsy Value");
+}
+VM2046:5 Falsy Value
+undefined
+a1=100;
+100
+if(a1){
+console.log("Value Truthy");
+}
+else{
+    console.log("Falsy Value");
+}
+VM2071:2 Value Truthy
+undefined
+a1="Amit";
+"Amit"
+if(a1){
+console.log("Value Truthy");
+}
+else{
+    console.log("Falsy Value");
+}
+VM2102:2 Value Truthy
+undefined
+a1=true;
+true
+if(a1){
+console.log("Value Truthy");
+}
+else{
+    console.log("Falsy Value");
+}
+VM2130:2 Value Truthy
+undefined
+a1=[10,20];
+(2) [10, 20]
+if(a1){
+console.log("Value Truthy");
+}
+else{
+    console.log("Falsy Value");
+}
+VM2164:2 Value Truthy
+undefined
+function add(x,y){
+x = x || 0;
+y = y || 0;
+return x + y;
+}
+undefined
+add(10,20);
+30
+add();
+0
+add(10);
+10
+function add2(x=0,y=0){
+return x + y;
+}
+undefined
+add;
+ƒ add(x,y){
+x = x || 0;
+y = y || 0;
+return x + y;
+}
+add(10,null);
+10
+add2(10,null)
+10
+add(10, undefined);
+10
+add2(10,undefined);
+10
+add(10,NaN);
+10
+add2(10,NaN)
+NaN
+add(10,"");
+10
+add2(10,"");
+"10"
+output();
+function output(){
+console.log("I am a Output fn ");
+}
+VM2777:3 I am a Output fn 
+undefined
+var y = function(){
+console.log("I am a Function Expression ");
+}
+undefined
+typeof y;
+"function"
+y();
+VM2890:2 I am a Function Expression 
+undefined
+function disp(){
+// var i; Variable Hositing (FN Level Scope)
+console.log(i); // undefined
+for(var i = 1; i<=3; i++){
+    console.log(i);
+}
+console.log(i);
+}
+undefined
+disp();
+VM3157:3 undefined
+VM3157:5 1
+VM3157:5 2
+VM3157:5 3
+VM3157:7 4
+undefined
+i;
+VM3189:1 Uncaught ReferenceError: i is not defined
+    at <anonymous>:1:1
+(anonymous) @ VM3189:1
+var bb =1000;
+undefined
+window;
+Window {window: Window, self: Window, document: document, name: "", location: Location, …}
+typeof window;
+"object"
+this;
+Window {window: Window, self: Window, document: document, name: "", location: Location, …}
+this === window;
+true
+window.bb;
+1000
+bb;
+1000
+bb;// window.bb;
+1000
+show();
+function show(){
+console.log("I am Show");
+}
+VM3502:3 I am Show
+undefined
+window.show;
+ƒ show(){
+console.log("I am Show");
+}
+window.show();
+VM3502:3 I am Show
+undefined
+show();// window.show();
+VM3502:3 I am Show
+undefined
+z();
+var z = function(){
+console.log("I am Fn Expression");
+}
+VM3747:1 Uncaught TypeError: z is not a function
+    at <anonymous>:1:1
+(anonymous) @ VM3747:1

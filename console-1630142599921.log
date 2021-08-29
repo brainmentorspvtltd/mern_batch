@@ -1,0 +1,88 @@
+function add(){
+var sum = 0;
+for(var i = 0; i<arguments.length; i++){
+if(arguments[i] instanceof Array){
+for(var j= 0; j<arguments[i].length; j++){
+    if(typeof arguments[i][j]==="function"){
+arguments[i][j] = arguments[i][j]();
+}
+sum+=isNaN(parseInt(arguments[i][j]))?0:parseInt(arguments[i][j]);
+} //jth loop ends
+} //if ends
+else{
+if(typeof arguments[i]==="function"){
+arguments[i] = arguments[i]();
+}
+sum+=isNaN(parseInt(arguments[i]))?0:parseInt(arguments[i]);
+}
+} //ith loop ends
+return sum;
+}
+undefined
+function show(...arr){
+console.log(arr);
+}
+undefined
+show();
+VM122:2 []
+undefined
+show(20,30);
+VM122:2 (2) [20, 30]
+undefined
+show(20,30,656,434);
+VM122:2 (4) [20, 30, 656, 434]
+undefined
+function show(...arr){
+console.log(arr, arguments);
+}
+undefined
+show(20,30,656,434);
+VM242:2 (4) [20, 30, 656, 434]0: 201: 302: 6563: 434length: 4[[Prototype]]: Array(0) Arguments(4) [20, 30, 656, 434, callee: (...), Symbol(Symbol.iterator): ƒ]0: 201: 302: 6563: 434callee: (...)length: 4Symbol(Symbol.iterator): ƒ values()get callee: ƒ ()set callee: ƒ ()[[Prototype]]: Object
+undefined
+function show(...arr){
+console.log(arr instanceof Array, arguments instanceof Array);
+}
+undefined
+show(10,20,30);
+VM318:2 true false
+undefined
+function show(x,y,...arr){
+console.log(arr instanceof Array, arguments instanceof Array);
+}
+undefined
+function show(x,y,...arr){
+console.log(x,y, arr, arguments);
+//console.log(arr instanceof Array, arguments instanceof Array);
+}
+undefined
+show(10,20,30,40,50);
+VM577:2 10 20 (3) [30, 40, 50] Arguments(5) [10, 20, 30, 40, 50, callee: (...), Symbol(Symbol.iterator): ƒ]
+undefined
+function show(x,y,...arr,...arr2){
+console.log(x,y, arr, arguments);
+//console.log(arr instanceof Array, arguments instanceof Array);
+}
+VM660:1 Uncaught SyntaxError: Rest parameter must be last formal parameter
+function add(...args){
+var sum = 0;
+for(var i = 0; i<args.length; i++){
+if(args[i] instanceof Array){
+for(var j= 0; j<args[i].length; j++){
+    if(typeof args[i][j]==="function"){
+args[i][j] = args[i][j]();
+}
+sum+=isNaN(parseInt(args[i][j]))?0:parseInt(args[i][j]);
+} //jth loop ends
+} //if ends
+else{
+if(typeof args[i]==="function"){
+args[i] = args[i]();
+}
+sum+=isNaN(parseInt(args[i]))?0:parseInt(args[i]);
+}
+} //ith loop ends
+return sum;
+}
+undefined
+add(10,20,30,"40",50);
+150
