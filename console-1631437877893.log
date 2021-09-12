@@ -1,0 +1,155 @@
+var arr = [10,20,30,10,20,10,40,90,10];
+undefined
+var sum = 0;
+for(let i = 0 ; i<arr.length; i++){
+    sum += arr[i];
+}
+console.log(sum);
+VM270:5 240
+undefined
+arr.reduce((acc,element)=>acc+element,acc=0);
+240
+arr.reduce((acc,element)=>acc+element);
+240
+arr.reduce((acc,element)=>acc+element, acc =0);
+240
+var arr = [10,20,30,10,20,10,40,90,10];
+arr.reduce((acc,element)=>{
+if(element>20){
+acc = acc+element;
+}
+return acc;
+}
+, acc =0);
+160
+var arr = [10,20,30,10,20,10,40,90,10];
+arr.reduce((acc,element)=>element>20?acc+element:acc, acc =0);
+160
+var arr = [10,20,30,10,20,10,40,90,10];
+arr.reduce((acc,element)=>{
+if(element==10){
+acc.push(element);
+}
+return acc;
+}, acc =[]);
+(4) [10, 10, 10, 10]
+arr.reduce((max, element)=>{
+if(element>max){
+max = element;
+}
+return max
+}, max = Number.MIN_SAFE_INTEGER)
+90
+arr.every(element=>element>20);
+false
+arr.some(element=>element>30);
+true
+var arr = [10,20,30,40];
+undefined
+arr.push(1000);
+5
+arr;
+(5) [10, 20, 30, 40, 1000]
+arr.push(1,2,3);
+8
+arr;
+(8) [10, 20, 30, 40, 1000, 1, 2, 3]
+arr.unshift(1000);
+9
+arr;
+(9) [1000, 10, 20, 30, 40, 1000, 1, 2, 3]
+arr.unshift(9,8,7);
+12
+arr;
+(12) [9, 8, 7, 1000, 10, 20, 30, 40, 1000, 1, 2, 3]
+arr.pop();
+3
+arr;
+(11) [9, 8, 7, 1000, 10, 20, 30, 40, 1000, 1, 2]
+arr.shift();
+9
+arr;
+(10) [8, 7, 1000, 10, 20, 30, 40, 1000, 1, 2]
+arr.length ;
+10
+arr.length = arr.length-4;
+6
+arr;
+(6) [8, 7, 1000, 10, 20, 30]
+arr.length = 0;
+0
+arr;
+[]
+arr =[10,20,30,40];
+(4) [10, 20, 30, 40]
+arr = [];
+[]
+arr;
+[]
+arr=[10,20,30,40];
+(4) [10, 20, 30, 40]
+arr.splice(1,2);
+(2) [20, 30]
+arr;
+(2) [10, 40]
+arr = [10,20,30,40,50,60];
+(6) [10, 20, 30, 40, 50, 60]
+arr.splice(1)
+(5) [20, 30, 40, 50, 60]
+arr;
+[10]
+arr = [10,20,30,40,50,60];
+(6) [10, 20, 30, 40, 50, 60]0: 101: 202: 303: 404: 505: 60length: 6[[Prototype]]: Array(0)
+arr.splice(1,1,1000); 
+[20]
+arr;
+(6) [10, 1000, 30, 40, 50, 60]
+arr.splice(1,0,5000)
+[]
+arr;
+(7) [10, 5000, 1000, 30, 40, 50, 60]
+arr = arr.filter(element=>!element>50);
+[]
+arr;
+[]
+arr = arr.filter(element=>!(element>50));
+[]
+arr;
+[]
+arr = [10,20,30,40,50,60];
+(6) [10, 20, 30, 40, 50, 60]
+arr = arr.filter(element=>!(element>50));
+(5) [10, 20, 30, 40, 50]0: 101: 202: 303: 404: 50length: 5[[Prototype]]: Array(0)
+arr = arr.filter(element=>(element<50));
+(4) [10, 20, 30, 40]
+arr = arr.filter(element=>(element<=50));
+(4) [10, 20, 30, 40]
+arr = [10,20,30,40,50,60];
+(6) [10, 20, 30, 40, 50, 60]
+arr = arr.filter(element=>(element<=50));
+(5) [10, 20, 30, 40, 50]
+arr;
+(5) [10, 20, 30, 40, 50]
+arr;
+(5) [10, 20, 30, 40, 50]
+Array.prototype.insert
+undefined
+Array.prototype.insert = function(index, element){
+    this.splice(index, 0 , element);
+    return this.length;
+}
+ƒ (index, element){
+    this.splice(index, 0 , element);
+    return this.length;
+}
+arr.insert
+ƒ (index, element){
+    this.splice(index, 0 , element);
+    return this.length;
+}
+arr;
+(5) [10, 20, 30, 40, 50]0: 101: 202: 303: 404: 50length: 5[[Prototype]]: Array(0)
+arr.insert(2,100000);
+6
+arr;
+(6) [10, 20, 100000, 30, 40, 50]

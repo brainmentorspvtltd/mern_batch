@@ -1,0 +1,35 @@
+var arr = [10,20,30,40];
+undefined
+typeof arr;
+'object'
+arr instanceof Array;
+true
+typeof Array;
+'function'
+Array.prototype
+[constructor: ƒ, concat: ƒ, copyWithin: ƒ, fill: ƒ, find: ƒ, …]
+Array.prototype.reduce
+ƒ reduce() { [native code] }
+Array.prototype.every
+ƒ every() { [native code] }
+Array.prototype.push
+ƒ push() { [native code] }
+typeof Array.prototype;
+'object'
+function show(){
+}
+undefined
+show.prototype
+{constructor: ƒ}constructor: ƒ show()[[Prototype]]: Object
+Array.prototype
+[constructor: ƒ, concat: ƒ, copyWithin: ƒ, fill: ƒ, find: ƒ, …]
+show.prototype.x = 10
+10
+show.prototype
+{x: 10, constructor: ƒ}
+show.prototype.disp = function(){}
+ƒ (){}
+show.prototype
+{x: 10, disp: ƒ, constructor: ƒ}
+arr.insert;
+undefined
