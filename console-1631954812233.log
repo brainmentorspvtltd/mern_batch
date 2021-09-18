@@ -1,0 +1,199 @@
+var obj  = {id:1001};
+undefined
+obj.name = "Amit";
+'Amit'
+obj;
+{id: 1001, name: 'Amit'}
+obj.joining date = "10-10-10"
+VM193:1 Uncaught SyntaxError: Unexpected identifier
+obj.1=true;
+VM232:1 Uncaught SyntaxError: Unexpected number
+obj.1d=true;
+VM267:1 Uncaught SyntaxError: Invalid or unexpected token
+obj[1] =true;
+true
+obj;
+{1: true, id: 1001, name: 'Amit'}
+obj[2] = true;
+true
+obj;
+{1: true, 2: true, id: 1001, name: 'Amit'}
+obj["joining date"] = "10-11-12"
+'10-11-12'
+obj;
+{1: true, 2: true, id: 1001, name: 'Amit', joining date: '10-11-12'}
+obj.1
+VM516:1 Uncaught SyntaxError: Unexpected number
+obj[1]
+true
+obj.joining date;
+VM591:1 Uncaught SyntaxError: Unexpected identifier
+obj["joining date"]
+'10-11-12'
+var key ="name";
+undefined
+obj[key];
+'Amit'
+obj.key
+undefined
+obj;
+{1: true, 2: true, id: 1001, name: 'Amit', joining date: '10-11-12'}1: true2: trueid: 1001joining date: "10-11-12"name: "Amit"[[Prototype]]: Object
+for(let key in obj){
+console.log(key)
+}
+VM842:2 1
+VM842:2 2
+VM842:2 id
+VM842:2 name
+VM842:2 joining date
+undefined
+for(let key in obj){
+console.log(key, obj[key])
+}
+VM871:2 1 true
+VM871:2 2 true
+VM871:2 id 1001
+VM871:2 name Amit
+VM871:2 joining date 10-11-12
+undefined
+var ram = {id:1001, name:'ram', salary:9999};
+undefined
+var shyam = {id:1002, name:'shyam', salary:6666};
+undefined
+function createEmp(id, name, salary){
+var emp = {}; // create
+emp.id = id; //init
+emp.name = name;
+emp.salary =salary;
+return emp; // return it
+}
+undefined
+var sohan = createEmp(1001, "Sohan",9999);
+undefined
+sohan;
+{id: 1001, name: 'Sohan', salary: 9999}
+var tom = createEmp(1002, "Tom",2999);
+undefined
+tom;
+{id: 1002, name: 'Tom', salary: 2999}id: 1002name: "Tom"salary: 2999[[Prototype]]: Object
+function createCustomer(id, name, balance){
+var customer = {}; // create
+customer.id = id; //init
+customer.name = name;
+customer.salary =balance;
+return customer; // return it
+}
+undefined
+function createCustomer(id, name, balance){
+var customer = {}; // create
+customer.id = id; //init
+customer.name = name;
+customer.balance =balance;
+return customer; // return it
+}
+undefined
+tom;
+{id: 1002, name: 'Tom', salary: 2999}id: 1002name: "Tom"salary: 2999[[Prototype]]: Object
+var mike = createCustomer(10, 'Mike',5555);
+undefined
+tom;
+{id: 1002, name: 'Tom', salary: 2999}id: 1002name: "Tom"salary: 2999[[Prototype]]: Object
+mike;
+{id: 10, name: 'Mike', balance: 5555}balance: 5555id: 10name: "Mike"[[Prototype]]: Object
+tom instanceof createEmp
+false
+tom instanceof Object
+true
+mike instanceof createCustomer;
+false
+mike instanceof Object;
+true
+var arr = [];
+undefined
+typeof mike;
+'object'
+typeof arr;
+'object'
+arr instanceof Array;
+true
+mike instanceof createCustomer;
+false
+mike instanceof Object;
+true
+arr instanceof Object;
+true
+function Customer(id, name , balance){
+
+}
+
+var tim = new Customer();
+undefined
+tim;
+Customer {}[[Prototype]]: Object
+mike;
+{id: 10, name: 'Mike', balance: 5555}
+var vim = {};
+undefined
+vim;
+{}
+vim instanceof Object
+true
+tim instanceof Customer;
+true
+tim instanceof Object
+true
+function Customer(id, name , balance){
+    console.log(this);
+}
+
+var tim = new Customer();
+VM2511:2 Customer {}[[Prototype]]: Object
+undefined
+function Customer(id, name , balance){
+    console.log('This is ', this);
+}
+
+var tim = new Customer();
+console.log('Tim is ',tim);
+VM2620:2 This is  Customer {}
+VM2620:6 Tim is  Customer {}
+undefined
+Customer(); // window.Customer();
+VM2620:2 This is  Window {window: Window, self: Window, document: document, name: '', location: Location, …}
+undefined
+function createCustomer(id, name, balance){
+var customer = {}; // create
+customer.id = id; //init
+customer.name = name;
+customer.balance =balance;
+return customer; // return it
+}
+undefined
+// Function Constructor
+function Customer(id, name , balance){
+    // this = {};// Customer type object
+    console.log('This is ', this);
+    this.id = id;
+    this.name = name;
+    this.balance = balance;
+}
+
+var tim = new Customer();
+console.log('Tim is ',tim);
+VM2872:4 This is  Customer {}
+VM2872:11 Tim is  Customer {id: undefined, name: undefined, balance: undefined}
+undefined
+// Function Constructor
+function Customer(id, name , balance){
+    // this = {};// Customer type object
+    console.log('This is ', this);
+    this.id = id;
+    this.name = name;
+    this.balance = balance;
+}
+
+var tim = new Customer(1, "Tim",99999);
+console.log('Tim is ',tim);
+VM2923:4 This is  Customer {}balance: 99999id: 1name: "Tim"[[Prototype]]: Object
+VM2923:11 Tim is  Customer {id: 1, name: 'Tim', balance: 99999}balance: 99999id: 1name: "Tim"[[Prototype]]: Object
+undefined

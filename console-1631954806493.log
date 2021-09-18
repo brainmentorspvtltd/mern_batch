@@ -1,0 +1,129 @@
+var obj = {}; // Object Literal
+undefined
+typeof obj;
+'object'
+obj instanceof Object;
+true
+typeof Object;
+'function'
+obj.id = 1001;
+1001
+obj.name = "Amit";
+'Amit'
+obj;
+{id: 1001, name: 'Amit'}
+var obj2 = {id:1002, name:'Ram'};
+undefined
+delete obj.id;
+true
+obj;
+{name: 'Amit'}
+var fn = ()=>1000;
+undefined
+typeof fn;
+'function'
+fn.id = 1001;
+1001
+fn.name= 'Ram';
+'Ram'
+fn;
+()=>1000
+typeof fn;
+'function'
+fn.id;
+1001
+fn();
+1000
+obj();
+VM835:1 Uncaught TypeError: obj is not a function
+    at <anonymous>:1:1
+(anonymous) @ VM835:1
+var obj2 = new Object();
+undefined
+obj2;
+{}
+var obj3 = {};
+undefined
+var fn2 = new Function();
+undefined
+fn2;
+ƒ anonymous(
+) {
+
+}
+typeof fn2;
+'function'
+typeof Function;
+'function'
+obj;
+{name: 'Amit'}
+obj.toString();
+'[object Object]'
+fn2.toString();
+'function anonymous(\n) {\n\n}'
+console.dir(obj);
+VM1264:1 Objectname: "Amit"[[Prototype]]: Objectconstructor: ƒ Object()hasOwnProperty: ƒ hasOwnProperty()isPrototypeOf: ƒ isPrototypeOf()propertyIsEnumerable: ƒ propertyIsEnumerable()toLocaleString: ƒ toLocaleString()toString: ƒ toString()valueOf: ƒ valueOf()__defineGetter__: ƒ __defineGetter__()__defineSetter__: ƒ __defineSetter__()__lookupGetter__: ƒ __lookupGetter__()__lookupSetter__: ƒ __lookupSetter__()__proto__: (...)get __proto__: ƒ __proto__()set __proto__: ƒ __proto__()
+undefined
+console.dir(fn2);
+VM1323:1 ƒ anonymous( )arguments: nullcaller: nulllength: 0name: "anonymous"prototype: constructor: ƒ anonymous( )[[Prototype]]: Objectconstructor: ƒ Object()hasOwnProperty: ƒ hasOwnProperty()isPrototypeOf: ƒ isPrototypeOf()propertyIsEnumerable: ƒ propertyIsEnumerable()toLocaleString: ƒ toLocaleString()toString: ƒ toString()valueOf: ƒ valueOf()__defineGetter__: ƒ __defineGetter__()__defineSetter__: ƒ __defineSetter__()__lookupGetter__: ƒ __lookupGetter__()__lookupSetter__: ƒ __lookupSetter__()__proto__: (...)get __proto__: ƒ __proto__()set __proto__: ƒ __proto__()[[FunctionLocation]]: VM1033:1[[Prototype]]: ƒ ()[[Scopes]]: Scopes[1]
+undefined
+function add(x,y){}
+undefined
+var fn3 = new Function("a","b","return a * b;");
+undefined
+fn3;
+ƒ anonymous(a,b
+) {
+return a * b;
+}
+fn3(10,20);
+200
+var obj = {id:1001, name:'Amit'};
+undefined
+function show(obj2){
+console.log(obj2);
+}
+undefined
+show(obj);
+VM1680:2 {id: 1001, name: 'Amit'}
+undefined
+function disp(){
+console.log("I am Disp ");
+}
+undefined
+function output(fn){
+    fn();
+}
+output(disp);
+VM1791:2 I am Disp 
+undefined
+function show(){
+var obj = {id:101,name:'Amit'};
+return obj;
+}
+undefined
+show();
+{id: 101, name: 'Amit'}
+function output(){
+    function print(){
+        console.log("I am a Print ");
+    }
+return print;
+}
+undefined
+output();
+ƒ print(){
+        console.log("I am a Print ");
+    }
+var fn = output();
+undefined
+fn;
+ƒ print(){
+        console.log("I am a Print ");
+    }
+fn();
+VM2210:3 I am a Print 
+undefined
+output()();
+VM2210:3 I am a Print 
+undefined
