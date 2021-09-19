@@ -1,0 +1,9 @@
+Student MarkSheet
+Take Student Details 
+Rollno, Name , 3 Subject Marks,
+Compute Total marks, Percentage, Grade
+>=90 A
+<90 to >=70 B 
+<70 to >=60 C
+<60 to >=50 D
+F
