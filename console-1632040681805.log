@@ -1,0 +1,98 @@
+// Function Constructor
+function Customer(id, name , balance){
+    // this = {};// Customer type object
+    console.log('This is ', this);
+    this.id = id;
+    this.name = name;
+    this.balance = balance;
+}
+
+var tim = new Customer(1, "Tim",99999);
+console.log('Tim is ',tim);
+VM19:4 This is  Customer {}
+VM19:11 Tim is  Customer {id: 1, name: 'Tim', balance: 99999}
+undefined
+tim;
+Customer {id: 1, name: 'Tim', balance: 99999}
+// Function Constructor
+function Customer(id, name , balance){
+    // this = {};// Customer type object
+    console.log('This is ', this);
+    this.id = id;
+    this.name = name;
+    this.balance = balance;
+    this.print = function(){
+    console.log(`Id is ${this.id} Name is ${this.name} Balance is ${this.balance}`);
+}
+}
+
+var tim = new Customer(1, "Tim",99999);
+console.log('Tim is ',tim);
+VM177:4 This is  Customer {}
+VM177:14 Tim is  Customer {id: 1, name: 'Tim', balance: 99999, print: ƒ}
+undefined
+tim.print();
+VM177:9 Id is 1 Name is Tim Balance is 99999
+undefined
+var mike = new Customer(2, "Mike",5555);
+VM177:4 This is  Customer {}
+undefined
+mike.print();
+VM177:9 Id is 2 Name is Mike Balance is 5555
+undefined
+mike;
+Customer {id: 2, name: 'Mike', balance: 5555, print: ƒ}
+tim;
+Customer {id: 1, name: 'Tim', balance: 99999, print: ƒ}balance: 99999id: 1name: "Tim"print: ƒ ()[[Prototype]]: Objectconstructor: ƒ Customer(id, name , balance)[[Prototype]]: Objectconstructor: ƒ Object()hasOwnProperty: ƒ hasOwnProperty()isPrototypeOf: ƒ isPrototypeOf()propertyIsEnumerable: ƒ propertyIsEnumerable()toLocaleString: ƒ toLocaleString()toString: ƒ toString()valueOf: ƒ valueOf()__defineGetter__: ƒ __defineGetter__()__defineSetter__: ƒ __defineSetter__()__lookupGetter__: ƒ __lookupGetter__()__lookupSetter__: ƒ __lookupSetter__()__proto__: (...)get __proto__: ƒ __proto__()set __proto__: ƒ __proto__()
+mike;
+Customer {id: 2, name: 'Mike', balance: 5555, print: ƒ}
+Customer;
+ƒ Customer(id, name , balance){
+    // this = {};// Customer type object
+    console.log('This is ', this);
+    this.id = id;
+    this.name = name;
+    this.balance = balance;
+    this.print = function…
+Customer.prototype
+{constructor: ƒ}
+// Function Constructor
+function Customer(id, name , balance){
+    // this = {};// Customer type object
+    //console.log('This is ', this);
+    this.id = id;
+    this.name = name;
+    this.balance = balance;
+    
+}
+Customer.prototype.print = function(){
+    console.log(`Id ${this.id} Name ${this.name} Balance ${this.balance}`);
+}
+
+var tim = new Customer(1, "Tim",99999);
+//console.log('Tim is ',tim);
+ƒ (){
+    console.log(`Id ${this.id} Name ${this.name} Balance ${this.balance}`);
+}
+tim;
+Customer {id: 1, name: 'Tim', balance: 99999}balance: 99999id: 1name: "Tim"[[Prototype]]: Objectprint: ƒ ()constructor: ƒ Customer(id, name , balance)[[Prototype]]: Object
+var mike = new Customer(2, "Mike",4444);
+undefined
+mike;
+Customer {id: 2, name: 'Mike', balance: 4444}balance: 4444id: 2name: "Mike"[[Prototype]]: Objectprint: ƒ ()constructor: ƒ Customer(id, name , balance)[[Prototype]]: Object
+tim.print();
+VM622:11 Id 1 Name Tim Balance 99999
+undefined
+mike.print();
+VM622:11 Id 2 Name Mike Balance 4444
+undefined
+tim.__proto__ == Customer.prototype
+true
+mike.__proto__ == Customer.prototype;
+true
+tim.__proto__ == mike.__proto__
+true
+tim == mike;
+false
+tim;
+Customer {id: 1, name: 'Tim', balance: 99999}balance: 99999id: 1name: "Tim"[[Prototype]]: Objectprint: ƒ ()constructor: ƒ Customer(id, name , balance)[[Prototype]]: Objectconstructor: ƒ Object()hasOwnProperty: ƒ hasOwnProperty()isPrototypeOf: ƒ isPrototypeOf()propertyIsEnumerable: ƒ propertyIsEnumerable()toLocaleString: ƒ toLocaleString()toString: ƒ toString()valueOf: ƒ valueOf()__defineGetter__: ƒ __defineGetter__()__defineSetter__: ƒ __defineSetter__()__lookupGetter__: ƒ __lookupGetter__()__lookupSetter__: ƒ __lookupSetter__()__proto__: Objectprint: ƒ ()constructor: ƒ Customer(id, name , balance)[[Prototype]]: Objectconstructor: ƒ Object()hasOwnProperty: ƒ hasOwnProperty()isPrototypeOf: ƒ isPrototypeOf()propertyIsEnumerable: ƒ propertyIsEnumerable()toLocaleString: ƒ toLocaleString()toString: ƒ toString()valueOf: ƒ valueOf()__defineGetter__: ƒ __defineGetter__()__defineSetter__: ƒ __defineSetter__()__lookupGetter__: ƒ __lookupGetter__()__lookupSetter__: ƒ __lookupSetter__()__proto__: Objectconstructor: ƒ Object()hasOwnProperty: ƒ hasOwnProperty()isPrototypeOf: ƒ isPrototypeOf()propertyIsEnumerable: ƒ propertyIsEnumerable()toLocaleString: ƒ toLocaleString()toString: ƒ toString()valueOf: ƒ valueOf()__defineGetter__: ƒ __defineGetter__()__defineSetter__: ƒ __defineSetter__()__lookupGetter__: ƒ __lookupGetter__()__lookupSetter__: ƒ __lookupSetter__()__proto__: (...)get __proto__: ƒ __proto__()set __proto__: ƒ __proto__()get __proto__: ƒ __proto__()set __proto__: ƒ __proto__()get __proto__: ƒ __proto__()set __proto__: ƒ __proto__()

@@ -1,0 +1,71 @@
+function Employee(id , name , basicSalary, city='New Delhi', phone=''){
+    this.id = id;
+    this.name = name;
+    this.basicSalary = basicSalary;
+    this.city = city;
+    this.phone = phone;
+}
+Employee.prototype.hra = function(){
+return this.basicSalary * 0.50;
+}
+Employee.prototype.da = function(){
+return this.basicSalary * 0.15;
+}
+Employee.prototype.ta = function(){
+return this.basicSalary * 0.20;
+}
+Employee.prototype.ma = function(){
+return this.basicSalary * 0.10;
+}
+Employee.prototype.pf = function(){
+return this.basicSalary * 0.05;
+}
+Employee.prototype.gs = function(){
+return this.basicSalary + this.hra() + this.da() + this.ta() + this.ma();
+}
+Employee.prototype.tax = function(){
+return this.gs() * 0.10;
+}
+Employee.prototype.ns = function(){
+return this.gs() - this.tax() - this.pf();
+}
+ƒ (){
+return this.gs() - this.tax() - this.pf();
+}
+Employee.prototype
+{hra: ƒ, da: ƒ, ta: ƒ, ma: ƒ, pf: ƒ, …}da: ƒ ()gs: ƒ ()hra: ƒ ()ma: ƒ ()ns: ƒ ()pf: ƒ ()ta: ƒ ()tax: ƒ ()constructor: ƒ Employee(id , name , basicSalary, city='New Delhi', phone='')[[Prototype]]: Object
+var mike = new Employee(1001, "Mike",9000,'Delhi','2222');
+undefined
+mike;
+Employee {id: 1001, name: 'Mike', basicSalary: 9000, city: 'Delhi', phone: '2222'}basicSalary: 9000city: "Delhi"id: 1001name: "Mike"phone: "2222"[[Prototype]]: Objectda: ƒ ()gs: ƒ ()hra: ƒ ()ma: ƒ ()ns: ƒ ()pf: ƒ ()ta: ƒ ()tax: ƒ ()constructor: ƒ Employee(id , name , basicSalary, city='New Delhi', phone='')[[Prototype]]: Object
+mike.__proto__ == Employee.prototype
+true
+mike.hra();
+4500
+mike.ta();
+1800
+mike.pf();
+450
+mike.gs();
+17550
+mike.ns();
+15345
+console.dir(mike);
+VM1104:1 EmployeebasicSalary: 9000city: "Delhi"id: 1001name: "Mike"phone: "2222"[[Prototype]]: Objectda: ƒ ()gs: ƒ ()hra: ƒ ()ma: ƒ ()ns: ƒ ()pf: ƒ ()ta: ƒ ()tax: ƒ ()constructor: ƒ Employee(id , name , basicSalary, city='New Delhi', phone='')[[Prototype]]: Object
+undefined
+mike;
+Employee {id: 1001, name: 'Mike', basicSalary: 9000, city: 'Delhi', phone: '2222'}
+mike.__proto__ == Employee.prototype
+true
+Employee == Employee.prototype.constructor
+true
+mike.__proto__.__proto__ == Object.prototype
+true
+mike.__proto__.__proto__.constructor;
+ƒ Object() { [native code] }
+mike.__proto__.__proto__.constructor == Object;
+true
+mike.hra();
+4500
+mike.toString();
+'[object Object]'
