@@ -1,0 +1,8 @@
+  Create Person Function Constructor with person details
+	then Create Student Function Constructor with student details
+	make a relationship b/w Student and the person
+   Then create Employee Function Constructor with Employee details
+	make a relationship b/w employee and the student
+	all of them has a common print fn and invoke all of them with employee object
+	do the prototype chaining , also create the diagram of relationship
+	Do the chaining b/w constructors
